@@ -1,4 +1,4 @@
-🚀 Integrate Claude Code with Mcp using AgentCore Gateway 
+##🚀 Integrate Claude Code with Mcp using AgentCore Gateway 
 Overview
 
 This project integrates Claude Code with AWS AgentCore Gateway to create a centralized MCP server. Instead of managing multiple MCP connections, all requests are routed through a single gateway—reducing complexity, saving context window, and improving scalability.
@@ -55,7 +55,7 @@ AWS IAM Role (backend access)
 - `cognito-idp:*` (for user pools and OAuth)
 - `bedrock-agentcore:*` (for creating gateways and targets)
 
-### Environment
+## Environment
 
 - An AWS account with admin permissions
 - Python 3.10+
@@ -64,7 +64,6 @@ AWS IAM Role (backend access)
 
 
 ## Usage
-
 1. **Install dependencies**
 python3 -m venv .venv
 source .venv/bin/activate
