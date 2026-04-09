@@ -42,7 +42,7 @@ This project demonstrates how to integrate **Claude Code** with **AWS AgentCore 
 
 ## Architecture
 
-![Architecture Overview](https://github.com/vinayshinde-cloud/claude-code-gateway-mcp-server/tree/master/images)
+![Architecture Overview](architecture overview.jpg.png)
 
 The solution follows a clean, layered architecture:
 
