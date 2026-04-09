@@ -17,6 +17,7 @@ A centralized MCP (Model Context Protocol) gateway that integrates **Claude Code
 - [IAM Permissions](#iam-permissions)
 - [License](#license)
 
+- [Cleanup](#cleanup)
 ---
 
 ## Overview
@@ -221,3 +222,22 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - AWS AgentCore
 - Amazon Cognito
 - Python & boto3
+
+
+## Cleanup
+
+The notebook includes cleanup cells to:
+
+1. Delete the AgentCore Gateway and its targets
+2. Remove the MCP server from Claude Code (`claude mcp remove my-tools-gw`)
+
+### Additional Resources to Delete
+
+Additional resources you may need to manually delete:
+
+| Resource | Name |
+|----------|------|
+| IAM Role & Policies | `sample-claude-code-mcp-gateway` |
+| Cognito User Pool | `sample-agentcore-gateway-pool` |
+
+> **Tip**: Use the AWS Console or AWS CLI to verify and delete any remaining resources to avoid unexpected charges.
