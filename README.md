@@ -55,7 +55,6 @@ Claude Code ──(OAuth Token)──▶ AgentCore Gateway ──▶ AWS Knowled
        └── AWS IAM Role (Backend Access)
 ```
 
-![Solution Architecture](images/claude_code_agentcore_gateway_architecture_new.png)
 
 ### Request Flow
 
