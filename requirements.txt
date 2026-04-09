@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 bedrock-agentcore
 bedrock-agentcore-starter-toolkit
 botocore
 boto3
+=======
+bedrock-agentcore
+bedrock-agentcore-starter-toolkit
+botocore
+boto3
+>>>>>>> origin/clean-main
 python-dotenv
