@@ -6,7 +6,7 @@ This project demonstrates how to integrate Claude Code with AWS AgentCore Gatewa
 
 Instead of managing multiple MCP connections, all requests are routed through a single gateway. This reduces configuration complexity, optimizes context usage, and improves scalability in enterprise environments.
 
-###Usecase details
+### Usecase details
 
 | Information          | Details                                                   |
 |:---------------------|:----------------------------------------------------------|
@@ -33,6 +33,42 @@ Gateway figures out which backend tools are needed (semantic search)
 Gateway forwards the request to the right MCP target
 Response comes back through the gateway to Claude Code
 
+## What's in the Repo
+
+├── claude-code-gateway-mcp-server.ipynb # Main setup notebook
+├── utils.py # Helper functions for AWS resources
+├── requirements.txt # Python deps
+├── images/ # Architecture + screenshots
+└── README.md # This file
+
 ## Prerequisites
+
+**IAM permissions needed:**
+- `iam:CreateRole`, `iam:PutRolePolicy`, `iam:PassRole`
+- `cognito-idp:*` (for user pools and OAuth)
+- `bedrock-agentcore:*` (for creating gateways and targets)
+
+## Environment
+
+An AWS account with admin permissions
+Python 3.10+
+Jupyter Notebook
+Claude Code CLI installed and logged in
+
+## Usage
+
+**Install dependencies**
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -U pip
+pip install -U -r requirements.txt
+jupyter notebook claude-code-gateway-mcp-server.ipynb
+
+## Sample Prompts
+
+Once the gateway is registered in Claude Code, try:
+
+- `/mcp` → select `my-tools-gw` → View tools to see available tools
+- Ask Claude Code questions that leverage the AWS Knowledge MCP Server tools exposed through the gateway
 
 
