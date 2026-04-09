@@ -42,7 +42,7 @@ This project demonstrates how to integrate **Claude Code** with **AWS AgentCore 
 
 ## Architecture
 
-![Architecture Overview](architecture overview.jpg.png)
+![Architecture Diagram](images/architecture_overview.jpg.png)
 
 The solution follows a clean, layered architecture:
 
