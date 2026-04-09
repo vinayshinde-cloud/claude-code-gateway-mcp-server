@@ -6,26 +6,33 @@ This project demonstrates how to integrate Claude Code with AWS AgentCore Gatewa
 
 Instead of managing multiple MCP connections, all requests are routed through a single gateway. This reduces configuration complexity, optimizes context usage, and improves scalability in enterprise environments.
 
----
+###Usecase details
 
-## Problem Statement
+| Information          | Details                                                   |
+|:---------------------|:----------------------------------------------------------|
+| Tutorial type        | Interactive (Jupyter Notebook)                            |
+| AgentCore components | AgentCore Gateway, AgentCore Identity                     |
+| Gateway Target type  | MCP server                                                |
+| Inbound Auth IdP     | Amazon Cognito (can use others)                           |
+| Tutorial vertical    | Cross-vertical                                            |
+| Complexity           | Easy                                                      |
+| SDK used             | boto3    
 
-In multi-MCP environments, the following challenges are observed:
+### Usecase Architecture
+Claude Code ──(OAuth token)──▶ AgentCore Gateway ──▶ AWS Knowledge MCP Server ──▶ Tools
+│
+Amazon Cognito (auth)
+AWS IAM Role (backend access)
 
-- Context window overhead: Each MCP server adds tool definitions, reducing space for model reasoning  
-- Configuration sprawl: Developers must configure and authenticate against multiple MCP servers  
+![Solution Architecture](images/claude_code_agentcore_gateway_architecture_new.png)
 
----
+### Use case key Features
+Claude Code hits the gateway with an OAuth Bearer token
+Gateway validates the token through Cognito
+Gateway figures out which backend tools are needed (semantic search)
+Gateway forwards the request to the right MCP target
+Response comes back through the gateway to Claude Code
 
-## Solution
+## Prerequisites
 
-AWS AgentCore Gateway acts as a centralized MCP server:
 
-- Provides a single endpoint for MCP communication  
-- Dynamically routes requests to backend MCP servers  
-- Uses semantic search for tool selection  
-- Integrates with OAuth authentication using Amazon Cognito  
-
----
-
-## Architecture
