@@ -1,0 +1,58 @@
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -U pip
+pip install -U -r requirements.txt
+jupyter notebook claude-code-gateway-mcp-server.ipynb
+
+
+if notebook not open 
+py --version
+py -m pip install --upgrade pip
+py -m pip install notebook ipykernel
+py -m notebook --version
+
+If that works, start the notebook with:
+py -m notebook claude-code-gateway-mcp-server.ipynb
+
+
+create iam role with the help of note book and atthach this policy 
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AgentCoreGatewayAccess",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CognitoAccess",
+      "Effect": "Allow",
+      "Action": [
+        "cognito-idp:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IamRoleManagementForSample",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateRole",
+        "iam:PutRolePolicy",
+        "iam:PassRole",
+        "iam:GetRole",
+        "iam:DeleteRole",
+        "iam:DeleteRolePolicy",
+        "iam:AttachRolePolicy",
+        "iam:DetachRolePolicy"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+
+
+
