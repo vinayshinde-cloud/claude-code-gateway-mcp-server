@@ -211,11 +211,6 @@ The following IAM permissions are required to run this project:
 
 ---
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
 
 **Built with** 
 - Claude Code
