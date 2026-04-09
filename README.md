@@ -15,8 +15,6 @@ A centralized MCP (Model Context Protocol) gateway that integrates **Claude Code
 - [Sample Prompts](#sample-prompts)
 - [Repository Structure](#repository-structure)
 - [IAM Permissions](#iam-permissions)
-- [License](#license)
-
 - [Cleanup](#cleanup)
 ---
 
